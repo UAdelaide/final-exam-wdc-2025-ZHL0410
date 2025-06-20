@@ -24,7 +24,8 @@
 
             async mounted() {
                 const singleDogImageRes = await fetch('https://dog.ceo/api/breeds/image/random');
-                this.singleDog = await singleDogImageRes.json();
+                const singleDog = await singleDogImageRes.json();
+                this.singleDogImage = singleDog.
             },
 
             methods: {
