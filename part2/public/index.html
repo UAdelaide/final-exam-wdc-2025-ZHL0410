@@ -54,7 +54,9 @@
                 password_hash: this.password
               }),
               credentials: 'include'
-            })
+            });
+
+            const data = await res.json();
           } catch (error) {
 
           }
