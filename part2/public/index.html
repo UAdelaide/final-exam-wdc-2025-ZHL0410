@@ -44,7 +44,9 @@
       methods: {
         async login() {
           try {
-            const res = await fetch('/user')
+            const res = await fetch('/users/login', {
+              method: 'POST'
+            })
           } catch (error) {
 
           }
