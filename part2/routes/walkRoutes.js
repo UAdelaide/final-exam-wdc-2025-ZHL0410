@@ -41,6 +41,7 @@ router.post('/:id/apply', async (req, res) => {
   const { walker_id } = req.body;
 
   try {
+    // check if 
     await db.query(`
       INSERT INTO WalkApplications (request_id, walker_id)
       VALUES (?, ?)
