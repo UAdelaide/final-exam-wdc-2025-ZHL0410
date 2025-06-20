@@ -80,7 +80,7 @@ router.post('/logout', (req, res) => {
 });
 
 // GET user's all dogs
-router.get('/dogs', (req, res) => {
+router.get('/dogs', async (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({
       error: 'Not authenticated!'
@@ -90,7 +90,7 @@ router.get('/dogs', (req, res) => {
   const ownerId = req.session.user.user_id;
 
   const sql = `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`;
-  db.query(sql, [ownerId]);
+  const [] = await db.query(sql, [ownerId]);
 });
 
 module.exports = router;
