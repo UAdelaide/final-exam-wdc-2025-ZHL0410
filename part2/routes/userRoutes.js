@@ -82,7 +82,9 @@ router.post('/logout', (req, res) => {
 // GET user's all dogs
 router.get('/dogs', (req, res) => {
   if (!req.session.user) {
-    return res.status()
+    return res.status(401).json({
+      error: 'Not authenticated!'
+    })
   }
 });
 
