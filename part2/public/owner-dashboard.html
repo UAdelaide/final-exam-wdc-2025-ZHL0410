@@ -104,9 +104,9 @@
               credentials: 'include'
             });
             if (!res.ok) throw new Error('Failed to load dogs');
-            dogs.value 
+            dogs.value = await res.json();
           } catch (error) {
-
+            
           }
         }
 
