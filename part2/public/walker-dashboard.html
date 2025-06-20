@@ -99,7 +99,12 @@
             const res = await fetch('/api/users/me', {
               credentials: 'include'
             });
-            if (!res.ok) {throw new Error('Not authenticated')};
+            if (!res.ok) {
+              throw new Error('Not authenticated');
+              alert({
+                message: 
+              })
+            };
           } catch (error) {
             window.location.href = '/index.html';
           }
