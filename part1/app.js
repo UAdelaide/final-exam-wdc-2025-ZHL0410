@@ -104,7 +104,16 @@ app.get('/api/dogs', async (req, res) => {
 
 // Route to return open walkrequests as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
-    
+    try {
+    const [rowsOfWalkRequests] = await db.execute(`
+        SELECT d.name AS dog_name, d.size, u.username
+        FROM Dogs d
+        JOIN Users u ON d.owner_id = u.user_id
+        `);
+    res.json(rowsOf);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch walkrequests' });
+  }
 });
 
 module.exports = app;
