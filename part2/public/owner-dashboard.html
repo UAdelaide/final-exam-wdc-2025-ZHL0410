@@ -137,17 +137,7 @@
         onMounted(() => {
           loadWalks();
 
-          // check credentials
-          async () => {
-            try {
-              const res = await fetch('/api/users/me', {
-                credentials: 'include'
-              });
-              if (!res.ok) throw new Error('Not authenticated');
-            } catch (error) {
-              window.location.href = '/index.html';
-            }
-          }
+          
         });
 
         return {
