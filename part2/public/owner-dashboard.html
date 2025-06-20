@@ -140,7 +140,9 @@
           // check credentials
           async () => {
             try {
-              
+              const res = await fetch('/api/users/me', {
+                credentials: 'include'
+              })
             } catch (error) {
 
             }
