@@ -43,9 +43,11 @@
             methods: {
                 async fetchDogImage() {
                     try {
-
+                        const singleDogImageRes = await fetch('https://dog.ceo/api/breeds/image/random');
+                const singleDog = await singleDogImageRes.json();
+                this.singleDogImage = singleDog.message;
                     } catch (error) {
-                        alert("Oops! Co");
+                        alert("Oops! Couldn't fetch dog image. Try again!");
                     }
                 }
             }
