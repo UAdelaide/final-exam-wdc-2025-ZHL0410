@@ -100,7 +100,7 @@ let db;
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
         (
-            (SELECT request_id FROM WalkRequests WHERE requested)
+            (SELECT request_id FROM WalkRequests WHERE requested_time = ''),
         );
             `);
     }
