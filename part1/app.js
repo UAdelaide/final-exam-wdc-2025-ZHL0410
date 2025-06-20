@@ -83,7 +83,13 @@ let db;
     const [rowsOfWalkApplications] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (rowsOfWalkApplications[0].count === 0) {
         await db.execute(`
-            
+        INSERT INTO WalkApplications (request_id, walker_id, status)
+        VALUES
+        ((SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-10 08:00:00'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+        ((SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-10 09:30:00'), (SELECT user_id FROM Users WHERE username = 'simonwalker'), 'accepted'),
+        ((SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-11 09:30:00'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
+        ((SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'), (SELECT user_id FROM Users WHERE username = 'simonwalker'), 'rejected'),
+        ((SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-13 12:30:00'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending');
             `);
     }
 
