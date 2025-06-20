@@ -52,7 +52,11 @@ let db;
       `);
     }
 
-    
+    // Insert data if Dogs table is empty
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    if (rows[0].count === 0) {
+
+    }
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
