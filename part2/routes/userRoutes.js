@@ -87,7 +87,9 @@ router.get('/dogs', (req, res) => {
     });
   }
 
-  const ownerId 
+  const ownerId = req.session.user.user_id;
+
+  const sql = ``
 });
 
 module.exports = router;
