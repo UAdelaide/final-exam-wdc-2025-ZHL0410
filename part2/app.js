@@ -1,6 +1,6 @@
 const express = require('express');
 // include session package
-const session = require('express');
+const session = require('express-session');
 const path = require('path');
 require('dotenv').config();
 
