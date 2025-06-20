@@ -160,7 +160,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
     try {
     const [rowsOfWalkerSummary] = await db.execute(`
-        SELECT 
+        SELECT u.username AS walker_username
+        FROM Users u
         `);
     res.json(rowsOfWalkerSummary);
   } catch (err) {
