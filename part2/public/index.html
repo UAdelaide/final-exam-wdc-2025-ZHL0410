@@ -21,7 +21,7 @@
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input v-model="password" type="password" class="form-control" id="password" required>
+        <input v-model="password" type="password" class="form-control" id="password" required autocomplete="password">
       </div>
       <button type="submit" class="btn btn-primary">Log In</button>
       <p class="text-danger mt-3" v-if="error">{{ error }}</p>
