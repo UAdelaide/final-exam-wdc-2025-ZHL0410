@@ -24,8 +24,9 @@
         <input v-model="password" type="password" class="form-control" required>
       </div>
       <button type="submit">Log In</button>
+      <p v-if="error" class="">{{ error }}</p>
     </form>
-    
+
 
     <!-- no need the links -->
     <!-- <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
