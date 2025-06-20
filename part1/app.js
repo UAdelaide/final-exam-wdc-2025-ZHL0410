@@ -100,7 +100,10 @@ let db;
         const [[walker]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'simonwalker'`);
         const [[owner]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'carol123'`);
 
-        
+        await db.execute(`
+            INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+            VALUES
+            `);
         await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
