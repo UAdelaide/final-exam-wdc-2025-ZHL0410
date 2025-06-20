@@ -144,6 +144,8 @@
               throw new Error('Not authenticated');
             };
           } catch (error) {
+            alert('Please log in.')
+            set
             window.location.href = '/index.html?unauth=true';
           }
         }
