@@ -101,8 +101,11 @@
         async function loadDogs() {
           try {
             const res = await fetch('/api/users/dog', {
+              credentials: 'include'
+            });
+            if (!res.ok) {
               
-            })
+            }
           } catch (error) {
 
           }
