@@ -100,7 +100,8 @@ let db;
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
         (
-            (SELECT request_id FROM WalkRequests WHERE requested_time = ''),
+            (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
+            (SELECT user_id FROM Users WHERE )
         );
             `);
     }
