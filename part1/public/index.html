@@ -40,14 +40,14 @@
 
         <!-- multiple layers to show the dog image: break the rules of kinematic load -->
         <button @click="layer1Clicked = true">Show Dog Image Step One</button>
-        <button @click="layer2Clicked = true" v="!layer1Clicked">Show Dog Image Step Two</button>
-        <button @click="fetchDogImage" :disabled="!layer2Clicked">Finally: show dog image</button>
+        <button @click="layer2Clicked = true" v-show="layer1Clicked">Show Dog Image Step Two</button>
+        <button @click="fetchDogImage" v-show="layer2Clicked">Finally: show dog image</button>
 
         <!-- there is no alt info for img tag-->
         <img :src="singleDogImage" alt="">
 
         <!-- info about the dog-->
-        <div v-if="layer2Clicked">
+        <div v-show="layer2Clicked">
             <p>Dog name: Bandit</p>
             <p>Age: 3</p>
             <p>Sex: boy</p>
