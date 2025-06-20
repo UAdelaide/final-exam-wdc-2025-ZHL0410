@@ -104,7 +104,9 @@
             };
           } catch (error) {
             alert('Please log in.');
-            window.location.href = '/index.html';
+            setTimeout(() => {
+              window.location.href = '/index.html';
+            }, 100);
           }
         }
 
