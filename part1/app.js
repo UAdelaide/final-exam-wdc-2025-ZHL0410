@@ -6,7 +6,7 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dogsRouter = require()
+var dogsRouter = require('./routes/dogs');
 
 var app = express();
 
@@ -88,5 +88,6 @@ let db;
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use
 
 module.exports = app;
