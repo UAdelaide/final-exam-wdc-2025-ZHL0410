@@ -92,7 +92,7 @@ app.use('/users', usersRouter);
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rowsOfDogs] = await db.execute(`
-        SELECT d.name AS dog_name, d.size, u.username AS owner_name
+        SELECT d.name AS dog_name, d.size, u.username AS owner_username
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
         `);
@@ -106,7 +106,7 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
     const [rowsOfWalkRequests] = await db.execute(`
-        SELECT
+        SELECT r
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
         `);
