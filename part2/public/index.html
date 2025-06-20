@@ -40,7 +40,8 @@
         return {
           message: 'Welcome to the Dog Walking Service!',
           username: '',
-          password: ''
+          password: '',
+          error:
         };
       },
 
@@ -66,7 +67,7 @@
             } else if (result.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
             } else {
-              this
+              this.error = 'Unknown role';
             }
           } catch (error) {
 
