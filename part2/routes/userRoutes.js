@@ -72,7 +72,7 @@ router.post('/logout', (req, res) => {
       });
     }
 
-    res.
+    res.clearCookie('connect.sid');
   })
 });
 
