@@ -12,8 +12,8 @@
 
         <!-- multiple layers to show the dog image -->
         <button @click="layer1Clicked = true">Show Dog Image Step One</button>
-        <button @click="layer2Clicked = true" :disabled="!layer1Clicked">Show Dog Image Step One</button>
-        <button @click="fetchDogImage" :disabled="">Show Dog Image Step One</button>
+        <button @click="layer2Clicked = true" :disabled="!layer1Clicked">Show Dog Image Step Two</button>
+        <button @click="fetchDogImage" :disabled="!layer2Clicked">Show Dog Image Step One</button>
 
         <!-- there is no alt info for img tag-->
         <img :src="singleDogImage" alt="">
