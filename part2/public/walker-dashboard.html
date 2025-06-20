@@ -107,7 +107,8 @@
             window.location.href = '/index.html';
           }
         }
-        
+
+        // call checkAuth to check credentials before load walk requests
         onMounted(async () => {
           await checkAuth();
           await loadWalkRequests();
