@@ -149,6 +149,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
-// Route to return a summary of each walker with their average rating and number of completed walks as JSON
+// Route to return a summary of each walker as JSON
+
 
 module.exports = app;
