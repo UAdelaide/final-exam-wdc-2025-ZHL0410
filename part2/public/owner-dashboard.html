@@ -177,7 +177,7 @@
         // call checkAuth to check credentials before load walks
         onMounted(async () => {
           await checkAuth();
-          // call it 
+          // call it in onMounted
           await Promise.all([loadDogs(), loadWalks()]);
           // await loadWalks();
         });
@@ -188,7 +188,8 @@
           message,
           error,
           submitWalkRequest,
-          logout
+          logout,
+          dogs
         };
       }
     }).mount('#app');
