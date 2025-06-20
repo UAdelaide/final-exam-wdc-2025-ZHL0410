@@ -96,7 +96,7 @@ let db;
     // Insert data if WalkRatings table is empty
     const [rowsOfWalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rowsOfWalkRatings[0].count === 0) {
-        const [[req]]
+        const [[req]] = await db.execute(`SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'`)
         await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES
