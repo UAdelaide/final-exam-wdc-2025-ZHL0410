@@ -22,7 +22,7 @@
         <img :src="singleDogImage" alt="">
 
         <!-- info about the dog-->
-        <div :disabled="!layer2Clicked">
+        <div v-if="!layer2Clicked">
             <p>Dog name: Bandit</p>
             <p>Age: 3</p>
             <p>Sex: boy</p>
