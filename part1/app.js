@@ -99,7 +99,7 @@ let db;
         const [[req]] = await db.execute(`SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'`);
         const [[walker]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'simonwalker'`);
         const [[owner]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'carol123'`);
-
+        
         await db.execute(`
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
             VALUES
@@ -117,8 +117,6 @@ let db;
         // );
         // `);
     }
-
-        console.log('db connection succeeds and records stored.');
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
