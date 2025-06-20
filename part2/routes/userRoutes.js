@@ -79,4 +79,6 @@ router.post('/logout', (req, res) => {
   });
 });
 
+// GET owner
+
 module.exports = router;
