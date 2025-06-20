@@ -127,7 +127,8 @@
               method: 'POST',
               credentials: 'include'
             });
-            if (!res.ok) throw 
+            if (!res.ok) throw new Error('Logout failed');
+            window.location.href
           } catch (error) {
 
           }
