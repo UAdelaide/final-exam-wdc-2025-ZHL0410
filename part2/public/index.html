@@ -31,7 +31,7 @@
   </div>
 
   <!-- add binding attributes username and password -->
-  <!-- define login function -->
+  <!-- define login function to call when user logs in -->
   <script>
     const { createApp } = Vue;
     createApp({
@@ -47,7 +47,8 @@
         async login() {
           try {
             const res = await fetch('/users/login', {
-              method: 'POST'
+              method: 'POST',
+              cont
             })
           } catch (error) {
 
