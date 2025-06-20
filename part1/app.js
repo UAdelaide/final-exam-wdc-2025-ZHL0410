@@ -104,18 +104,18 @@ let db;
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
             VALUES
             (?, ?, ?, 5, 'Good job and my dog enjoys!');
-            `, []);
-        await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        VALUES
-        (
-            (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
-            (SELECT user_id FROM Users WHERE username = 'simonwalker'),
-            (SELECT user_id FROM Users WHERE username = 'carol123'),
-            5,
-            'Good job and my dog enjoys!'
-        );
-        `);
+            `, [req.request_id]);
+        // await db.execute(`
+        // INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+        // VALUES
+        // (
+        //     (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
+        //     (SELECT user_id FROM Users WHERE username = 'simonwalker'),
+        //     (SELECT user_id FROM Users WHERE username = 'carol123'),
+        //     5,
+        //     'Good job and my dog enjoys!'
+        // );
+        // `);
     }
 
         console.log('db connection succeeds and records stored.');
