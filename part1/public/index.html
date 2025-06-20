@@ -16,6 +16,10 @@
             100% { background-color: aqua; }
         }
 
+        .btns {
+            
+        }
+
         button {
             background: cyan;
             border: 3px dashed red;
@@ -40,7 +44,7 @@
 
         <!-- multiple layers to show the dog image: break the rules of kinematic load -->
         <!-- no button type: break the rules of accessibility -->
-         <div >
+         <div class="btns">
             <button @click="layer1Clicked = true">Show Dog Image Step One</button>
             <button @click="layer2Clicked = true" :disabled="!layer1Clicked">Show Dog Image Step Two</button>
             <button @click="fetchDogImage" :disabled="!layer2Clicked">Finally: show dog image</button>
