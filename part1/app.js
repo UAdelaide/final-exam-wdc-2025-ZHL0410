@@ -82,13 +82,16 @@ let db;
     // Insert data if WalkApplications table is empty
     const [rowsOfWalkApplications] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (rowsOfWalkApplications[0].count === 0) {
-        await db.execute(``);
+        await db.execute(`
+            `);
     }
 
     // Insert data if WalkRatings table is empty
     const [rowsOfWalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (rowsOfWalkRequests[0].count === 0) {
+    if (rowsOfWalkRatings[0].count === 0) {
         await db.execute(`
+            `);
+    }
 
         console.log('db connection succeeds and records stored.');
     }
