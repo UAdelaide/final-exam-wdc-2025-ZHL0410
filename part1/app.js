@@ -99,7 +99,7 @@ let db;
         const [[req]] = await db.execute(`SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'`);
         const [[walker]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'simonwalker'`);
         const [[owner]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'carol123'`);
-        
+        console.log('db connection succeeds and records stored.');
         await db.execute(`
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
             VALUES
