@@ -108,9 +108,9 @@
           }
         }
 
-        onMounted(() => {
-          checkAuth();
-          loadWalkRequests();
+        onMounted(async () => {
+          await checkAuth();
+          await loadWalkRequests();
         });
 
         return {
