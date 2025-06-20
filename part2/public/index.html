@@ -56,9 +56,9 @@
               credentials: 'include'
             });
 
-            const data = await res.json();
+            const result = await res.json();
 
-            if 
+            if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
           } catch (error) {
 
           }
