@@ -104,7 +104,7 @@ let db;
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
             VALUES
             (?, ?, ?, 5, 'Good job and my dog enjoys!');
-            `, [req.request_id]);
+            `, [req.request_id, walker.user_id, owner.user_id]);
         // await db.execute(`
         // INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         // VALUES
