@@ -51,6 +51,9 @@ let db;
         ('lucy123', 'lucy@example.com', 'hashed999', 'owner');
       `);
     }
+
+    
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
