@@ -78,8 +78,6 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Ocean'), '2025-06-12 18:30:00', 40, 'Melbourne Rd', 'completed'),
             ((SELECT dog_id FROM Dogs WHERE name = 'Bubu'), '2025-06-13 12:30:00', 30, 'Kensington Park', 'cancelled');
             `);
-
-        // Insert data if WalkRequests table is empty
         console.log('db connection succeeds and records stored.');
     }
   } catch (err) {
