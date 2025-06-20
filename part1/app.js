@@ -102,6 +102,6 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-
+// Route to return open walkrequests as JSON
 
 module.exports = app;
