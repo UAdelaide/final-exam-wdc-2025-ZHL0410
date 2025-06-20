@@ -101,9 +101,7 @@
             });
             if (!res.ok) {
               throw new Error('Not authenticated');
-              alert({
-                message: 'Please log in.'
-              })
+              alert('Please log in.');
             };
           } catch (error) {
             window.location.href = '/index.html';
