@@ -178,7 +178,7 @@
         // call checkAuth to check credentials before load walks
         onMounted(async () => {
           await checkAuth();
-          // call it in onMounted
+          // call loadDogs in onMounted
           await Promise.all([loadDogs(), loadWalks()]);
           // await loadWalks();
         });
