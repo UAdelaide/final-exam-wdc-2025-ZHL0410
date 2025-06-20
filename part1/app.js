@@ -96,26 +96,26 @@ let db;
     // Insert data if WalkRatings table is empty
     const [rowsOfWalkRatings] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rowsOfWalkRatings[0].count === 0) {
-        const [[req]] = await db.execute(`SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'`);
-        const [[walker]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'simonwalker'`);
-        const [[owner]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'carol123'`);
-        console.log('db connection succeeds and records stored.');
-        await db.execute(`
-            INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-            VALUES
-            (?, ?, ?, 5, 'Good job and my dog enjoys!');
-            `, [req.request_id, walker.user_id, owner.user_id]);
+        // const [[req]] = await db.execute(`SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'`);
+        // const [[walker]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'simonwalker'`);
+        // const [[owner]] = await db.execute(`SELECT user_id FROM Users WHERE username = 'carol123'`);
+        // console.log('db connection succeeds and records stored.');
         // await db.execute(`
-        // INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        // VALUES
-        // (
-        //     (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
-        //     (SELECT user_id FROM Users WHERE username = 'simonwalker'),
-        //     (SELECT user_id FROM Users WHERE username = 'carol123'),
-        //     5,
-        //     'Good job and my dog enjoys!'
-        // );
-        // `);
+        //     INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+        //     VALUES
+        //     (?, ?, ?, 5, 'Good job and my dog enjoys!');
+        //     `, [req.request_id, walker.user_id, owner.user_id]);
+        await db.execute(`
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+        VALUES
+        (
+            (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
+            (SELECT user_id FROM Users WHERE username = 'simonwalker'),
+            (SELECT user_id FROM Users WHERE username = 'carol123'),
+            5,
+            'Good job and my dog enjoys!'
+        );
+        `);
     }
     }
   } catch (err) {
