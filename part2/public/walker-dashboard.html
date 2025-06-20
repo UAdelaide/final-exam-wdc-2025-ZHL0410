@@ -59,7 +59,8 @@
             });
 
             if (!res.ok) throw new Error('Failed to fetch user');
-            const data = await res.json()
+            const data = await res.json();
+            return data.user_id;
           } catch (error) {
             error.value =
           }
