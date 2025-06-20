@@ -89,7 +89,8 @@ router.get('/dogs', (req, res) => {
 
   const ownerId = req.session.user.user_id;
 
-  const sql = `SELECT dog_id, name FROM Dogs `
+  const sql = `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`;
+  db.query
 });
 
 module.exports = router;
