@@ -161,6 +161,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     try {
     const [rowsOfWalkerSummary] = await db.execute(`
         SELECT u.username AS walker_username
+        COUNT(wr)
         FROM Users u
         WHERE u.role = 'walker'
         GROUP BY u.user_id
