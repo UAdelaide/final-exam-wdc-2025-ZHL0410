@@ -88,8 +88,8 @@ let db;
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// Route to return books as JSON
-app.get('/', async (req, res) => {
+// Route to return dogs as JSON
+app.get('/api/dogs', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
