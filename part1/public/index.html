@@ -40,7 +40,7 @@
 
         <!-- multiple layers to show the dog image: break the rules of kinematic load -->
         <button @click="layer1Clicked = true">Show Dog Image Step One</button>
-        <button @click="layer2Clicked = true" :disabled="!layer1Clicked">Show Dog Image Step Two</button>
+        <button @click="layer2Clicked = true" v="!layer1Clicked">Show Dog Image Step Two</button>
         <button @click="fetchDogImage" :disabled="!layer2Clicked">Finally: show dog image</button>
 
         <!-- there is no alt info for img tag-->
