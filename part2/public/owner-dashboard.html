@@ -143,6 +143,7 @@
               const res = await fetch('/api/users/me', {
                 credentials: 'include'
               });
+              if (!res.ok) throw new Error()
             } catch (error) {
 
             }
