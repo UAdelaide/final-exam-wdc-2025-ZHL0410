@@ -8,7 +8,7 @@
 
 <body>
     <h1>Dog Of The Day</h1>
-    <p>Welcome to Express</p>
+    <img>
 <script>
         const { createApp } = Vue;
         createApp({
@@ -25,18 +25,6 @@
             },
 
             methods: {
-                async sendMessage(){
-                    if (!this.selectedItem.BookID || !this.messageText.trim()){
-                        return alert('Please select a book and enter a message.');
-                    }
-                    await fetch('/api/messages', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ bookID: this.selectedItem.BookID, sellerID:this.selectedItem.SellerID, message: this.messageText })
-                    });
-                    alert('Message sent!');
-                    this.messageText = '';
-                }
             }
         }).mount('#app');
     </script>
