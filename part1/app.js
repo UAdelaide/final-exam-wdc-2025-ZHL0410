@@ -88,6 +88,6 @@ let db;
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use
+app.use('/api', dogsRouter);
 
 module.exports = app;
