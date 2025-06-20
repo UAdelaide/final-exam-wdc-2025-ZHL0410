@@ -102,7 +102,9 @@ let db;
         (
             (SELECT request_id FROM WalkRequests WHERE requested_time = '2025-06-12 18:30:00'),
             (SELECT user_id FROM Users WHERE username = 'simonwalker'),
-            (SELECT user_id FROM Users WHERE username = 'carol123')
+            (SELECT user_id FROM Users WHERE username = 'carol123'),
+            4,
+            'Good job and 
         );
             `);
     }
