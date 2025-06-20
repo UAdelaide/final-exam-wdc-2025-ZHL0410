@@ -62,7 +62,7 @@
             const data = await res.json();
             return data.user_id;
           } catch (error) {
-            error.value =
+            error.value = error.message;
           }
         }
 
