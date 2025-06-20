@@ -149,7 +149,7 @@
           }
         }
 
-        // call check
+        // call checkAuth to check credentials before load walks
         onMounted(async () => {
           await checkAuth();
           await loadWalks();
