@@ -100,8 +100,8 @@
               credentials: 'include'
             });
             if (!res.ok) {
-              throw new Error('Not authenticated');
               alert('Please log in.');
+              throw new Error('Not authenticated');
             };
           } catch (error) {
             window.location.href = '/index.html';
