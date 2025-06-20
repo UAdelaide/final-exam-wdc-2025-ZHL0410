@@ -79,8 +79,11 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Bubu'), '2025-06-13 12:30:00', 30, 'Kensington Park', 'cancelled');
             `);
 
-    // Insert data if WalkRequests table is empty
+    // Insert data if WalkApplications table is empty
     const [rowsOfWalkApplications] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+
+    // Insert data if WalkRequests table is empty
+    const [rowsOfWalkRequests] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
 
         console.log('db connection succeeds and records stored.');
     }
