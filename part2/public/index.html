@@ -60,7 +60,9 @@
 
             if (!res.ok) throw new Error(result.error || 'Login failed');
 
-            
+            if (result.user.role === 'owner') {
+              
+            }
           } catch (error) {
 
           }
