@@ -103,6 +103,8 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 // Route to return open walkrequests as JSON
-app.get('/api/walkrequests/open', async )
+app.get('/api/walkrequests/open', async (req, res) => {
+    
+});
 
 module.exports = app;
