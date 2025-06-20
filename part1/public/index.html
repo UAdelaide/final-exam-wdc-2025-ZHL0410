@@ -14,18 +14,14 @@
         createApp({
             data() {
                 return {
-                    currentUserName:'Alice Johnson',
-                    items: [],
-                    selectedItem: null,
-                    messageText: '',
-                    messages: []
+                   singleDogImage: ''
                 };
             },
 
             async mounted() {
                 const singleDogImageRes = await fetch('https://dog.ceo/api/breeds/image/random');
                 const singleDog = await singleDogImageRes.json();
-                this.singleDogImage = singleDog.
+                this.singleDogImage = singleDog.message;
             },
 
             methods: {
