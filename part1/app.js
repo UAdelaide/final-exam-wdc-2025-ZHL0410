@@ -92,7 +92,8 @@ app.use('/users', usersRouter);
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rowsOfDogs] = await db.execute(`
-        SELECT name AS dog_name, size, 
+        SELECT d.name AS dog_name, d.size, u.
+        FROM Dogs d
         `);
     res.json(rowsOfDogs);
   } catch (err) {
