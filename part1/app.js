@@ -157,7 +157,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 // Route to return a summary of each walker as JSON
-
+app.get('/api/')
 
 
 module.exports = app;
