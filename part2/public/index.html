@@ -17,7 +17,7 @@
     <form @submit.prevent="login" class="bg-white p-4 rounded shadow-sm">
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
-        <input v-model="username" type="text" class="form-control" id="username" required>
+        <input v-model="username" type="text" class="form-control" id="username" required autocomplete="username">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
