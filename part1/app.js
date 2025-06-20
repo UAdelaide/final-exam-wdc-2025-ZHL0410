@@ -56,13 +56,15 @@ let db;
     const [rowsOfDogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (rowsOfDogs[0].count === 0) {
         await db.execute(`
+            
             `);
     }
 
     // Insert data if WalkRequests table is empty
-    const [rowsOfDogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-    if (rowsOfDogs[0].count === 0) {
+    const [rowsOfWalkRequests] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (rowsOfWalkRequests[0].count === 0) {
         await db.execute(`
+
             `);
     }
 
