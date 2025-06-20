@@ -50,7 +50,8 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                
+                username: this.username,
+                password_hash: this.password
               }),
             })
           } catch (error) {
