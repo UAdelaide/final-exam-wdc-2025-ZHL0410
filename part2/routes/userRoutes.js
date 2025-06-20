@@ -90,9 +90,9 @@ router.get('/dogs', async (req, res) => {
   const ownerId = req.session.user.user_id;
 
   try {
-    
-  } catch (error) {
 
+  } catch (error) {
+    
   }
 
   const sql = `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`;
