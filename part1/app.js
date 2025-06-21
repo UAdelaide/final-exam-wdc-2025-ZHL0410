@@ -63,7 +63,7 @@ let db;
 
     // Create a WalkRequests table if it doesn't exist
     await db.query(`
-      CREATE TABLE WalkRequests (
+      CREATE TABLE IF NOT EXISTS WalkRequests (
         request_id INT AUTO_INCREMENT PRIMARY KEY,
         dog_id INT NOT NULL,
         requested_time DATETIME NOT NULL,
@@ -74,6 +74,8 @@ let db;
         FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
         )
     `);
+
+    // Create a WalkRequests table if it doesn't exist
 
     // Insert data if Users table is empty
     const [rowsOfUsers] = await db.execute('SELECT COUNT(*) AS count FROM Users');
