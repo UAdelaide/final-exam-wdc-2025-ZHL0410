@@ -34,7 +34,7 @@
     <!-- show all dogs in the databse -->
     <h2 class="mt-5 mb-3">All Registered Dogs</h2>
     <div v-if="dogs.length > 0" class="table-responsive">
-      <table class="table table-bordered align-middle">
+      <table class="table table-bordered align-middle table-striped">
         <thead class="table-light">
           <tr>
             <th>Dog ID</th>
@@ -45,7 +45,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="dog in dogs" :key="dog.dog_id" style="">
+          <tr v-for="dog in dogs" :key="dog.dog_id">
             <td>{{ dog.dog_id }}</td>
             <td>{{ dog.name }}</td>
             <td>{{ dog.size }}</td>
