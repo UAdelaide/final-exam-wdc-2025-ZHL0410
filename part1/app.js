@@ -77,7 +77,7 @@ let db;
 
     // Create a WalkApplications table if it doesn't exist
     await db.query(`
-      CREATE TABLE WalkApplications (
+      CREATE TABLE IF NOT EXISTS WalkApplications (
         application_id INT AUTO_INCREMENT PRIMARY KEY,
         request_id INT NOT NULL,
         walker_id INT NOT NULL,
@@ -88,6 +88,8 @@ let db;
         CONSTRAINT unique_application UNIQUE (request_id, walker_id)
       )
     `);
+
+      // Create a WalkApplications table if it doesn't exist
 
     // Insert data if Users table is empty
     const [rowsOfUsers] = await db.execute('SELECT COUNT(*) AS count FROM Users');
