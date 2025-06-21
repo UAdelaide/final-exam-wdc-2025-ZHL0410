@@ -76,7 +76,7 @@
       },
 
       mounted(){
-        
+        this.
       },
 
       methods: {
@@ -106,6 +106,10 @@
           } catch (error) {
             this.error = error.message || 'Error connecting to server.';
           }
+        },
+
+        async loadDogs(){
+
         }
       },
     }).mount('#app');
