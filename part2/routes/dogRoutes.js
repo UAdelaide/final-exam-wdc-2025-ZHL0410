@@ -5,10 +5,10 @@ const db = require('../models/db');
 // GET all dogs
 router.get('/', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT dog_id, name, size, role FROM Users');
+    const [rows] = await db.query('SELECT dog_id, name, size, role FROM Dogs');
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
 
