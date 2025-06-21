@@ -61,6 +61,10 @@ let db;
         )
     `);
 
+    // Create a WalkRequests table if it doesn't exist
+    await db.query(`
+    `);
+
     // Insert data if Users table is empty
     const [rowsOfUsers] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rowsOfUsers[0].count === 0) {
