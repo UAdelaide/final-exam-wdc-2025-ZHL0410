@@ -91,7 +91,7 @@ let db;
 
     // Create a WalkRatings table if it doesn't exist
     await db.query(`
-      CREATE TABLE WalkRatings (
+      CREATE TABLE IF NOT EXISTS WalkRatings (
         rating_id INT AUTO_INCREMENT PRIMARY KEY,
         request_id INT NOT NULL,
         walker_id INT NOT NULL,
