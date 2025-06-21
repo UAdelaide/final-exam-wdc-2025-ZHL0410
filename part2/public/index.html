@@ -126,7 +126,7 @@
 
             this.dogs = dogs;
           } catch (error) {
-            
+            this.error = error.message || 'Error connecting to server.';
           }
         }
       },
