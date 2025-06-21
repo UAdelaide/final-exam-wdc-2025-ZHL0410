@@ -51,13 +51,13 @@
             <td>{{ dog.size }}</td>
             <td>{{ dog.owner_id }}</td>
             <td>
-              <img :src="dog.photo" alt="Dog photo">
+              <img :src="dog.photo" alt="Dog photo" class="img-thumbnail">
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p v-else=>Loading dog list</p>
+    <p v-else>Loading dog list...</p>
 
   </div>
 
