@@ -71,7 +71,7 @@
               this.error = 'Unknown role';
             }
           } catch (error) {
-            this.error = 'Error connecting to server.';
+            this.error = error.message || 'Error connecting to server.';
           }
         }
       }
