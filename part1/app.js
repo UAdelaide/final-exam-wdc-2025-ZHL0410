@@ -47,7 +47,7 @@ let db;
         password_hash VARCHAR(255) NOT NULL,
         role ENUM('owner', 'walker') NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
+      )
     `);
 
     // Create a Dogs table if it doesn't exist
@@ -58,7 +58,7 @@ let db;
         name VARCHAR(50) NOT NULL,
         size ENUM('small', 'medium', 'large') NOT NULL,
         FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-        )
+      )
     `);
 
     // Create a WalkRequests table if it doesn't exist
@@ -72,21 +72,21 @@ let db;
         status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-        )
+      )
     `);
 
     // Create a WalkApplications table if it doesn't exist
     await db.query(`
       CREATE TABLE WalkApplications (
-    application_id INT AUTO_INCREMENT PRIMARY KEY,
-    request_id INT NOT NULL,
-    walker_id INT NOT NULL,
-    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
-    FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
-    FOREIGN KEY (walker_id) REFERENCES Users(user_id),
-    CONSTRAINT unique_application UNIQUE (request_id, walker_id)
-)
+        application_id INT AUTO_INCREMENT PRIMARY KEY,
+        request_id INT NOT NULL,
+        walker_id INT NOT NULL,
+        applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        status ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+        FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
+        FOREIGN KEY (walker_id) REFERENCES Users(user_id),
+        CONSTRAINT unique_application UNIQUE (request_id, walker_id)
+      )
     `);
 
     // Insert data if Users table is empty
