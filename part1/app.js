@@ -89,7 +89,8 @@ let db;
       )
     `);
 
-      // Create a WalkApplications table if it doesn't exist
+      // Create a WalkRatings table if it doesn't exist
+      await db.query(``);
 
     // Insert data if Users table is empty
     const [rowsOfUsers] = await db.execute('SELECT COUNT(*) AS count FROM Users');
