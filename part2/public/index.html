@@ -123,8 +123,10 @@
               const photoData = await photoRes.json();
               dog.photo = photoData.message;
             }
-          } catch (error) {
 
+            this.dogs = dogs;
+          } catch (error) {
+            
           }
         }
       },
